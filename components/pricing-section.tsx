@@ -5,80 +5,72 @@ import { Check } from "lucide-react"
 import { AnimatedText } from "@/components/ui/animated-text"
 import { AnimatedCard } from "@/components/ui/animated-card"
 import { motion } from "framer-motion"
-// import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function PricingSection() {
   return (
     <section id="precios" className="py-20 bg-gray-950 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black to-transparent z-10"></div>
       <div className="container relative z-20">
-        {/* <ScrollReveal> */}
-          <div className="text-center mb-16">
-            <AnimatedText text="Planes y Precios" className="text-3xl md:text-4xl font-bold mb-4" as="h2" />
-            <motion.p
-              className="text-xl text-gray-400 max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              // viewport={{ once: true }}
-            >
-              Soluciones flexibles que se adaptan a las necesidades de su negocio
-            </motion.p>
-          </div>
-        {/* </ScrollReveal> */}
+        <div className="text-center mb-16">
+          <AnimatedText text="Planes y Precios" className="text-3xl md:text-4xl font-bold mb-4" as="h2" />
+          <motion.p
+            className="text-xl text-gray-400 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
+            Soluciones flexibles que se adaptan a las necesidades de su negocio
+          </motion.p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+       <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
+
+          {/* Tarjeta Set Up */}
           <AnimatedCard delay={0.1}>
             <PricingCard
-              title="Básico"
-              price="99€"
-              description="Ideal para pequeñas tiendas online"
+              title="Set Up o implementación personalizada"
+              price="33 UF"
+              priceNote="neto"
+              description="Solución completa para tu eCommerce"
               features={[
                 "Asistente AI conversacional",
                 "Búsqueda de productos",
                 "Recomendaciones básicas",
-                "Hasta 1,000 conversaciones/mes",
-                "Soporte por email",
-              ]}
-              buttonText="Comenzar Gratis"
-              buttonVariant="outline"
-            />
-          </AnimatedCard>
-
-          <AnimatedCard delay={0.3}>
-            <PricingCard
-              title="Profesional"
-              price="249€"
-              description="Para tiendas en crecimiento"
-              features={[
-                "Todo lo del plan Básico",
+                "Hasta 30k interacciones/mes",
                 "Recomendaciones personalizadas",
                 "Comparación de productos",
-                "Hasta 5,000 conversaciones/mes",
-                "Integración con CRM",
-                "Soporte prioritario",
+                "Personalización completa",
+                "Integración API completa",
+                "Historial de interacciones con el agente AI",
+                "Soporte por email",
               ]}
-              buttonText="Solicitar Demo"
+              buttonText="Solicitar Implementación"
               buttonVariant="default"
-              highlighted={true}
+              highlighted
+              showRecommended
             />
           </AnimatedCard>
 
-          <AnimatedCard delay={0.5}>
+          {/* Tarjeta Fee mensual */}
+          <AnimatedCard delay={0.3}>
             <PricingCard
-              title="Empresarial"
-              price="Personalizado"
-              description="Para grandes eCommerce"
+              title="Fee Mensual"
+              price="3,9 UF"
+              priceNote="mes neto"
+              description="Costo recurrente para mantener tu solución activa"
               features={[
-                "Todo lo del plan Profesional",
-                "Conversaciones ilimitadas",
-                "Personalización completa",
-                "Integración API completa",
-                "Análisis avanzado",
-                "Soporte 24/7",
-                "Gestor de cuenta dedicado",
+                "Duración: 1 mes (renovable automáticamente)",
+                "8 horas/mes de soporte incluidas",
+                "Tarifa extra por hora: 0,7 UF/hora neto",
+                "SLA de respuesta: 6 horas desde la recepción",
+                "Horario de cobertura: Lunes-Viernes, 09:00-18:00 (GMT -4)",
+                "Token LLM",
+                "base de datos",
+                "Embedding",
+                "RAG",
+                "tarifa por hora extra: $30 USD/Hra"
               ]}
-              buttonText="Contactar"
+              buttonText="Solicitar Información"
               buttonVariant="outline"
             />
           </AnimatedCard>
@@ -91,27 +83,31 @@ export function PricingSection() {
 interface PricingCardProps {
   title: string
   price: string
+  priceNote: string
   description: string
   features: string[]
   buttonText: string
   buttonVariant: "default" | "outline"
   highlighted?: boolean
+  showRecommended?: boolean
 }
 
 function PricingCard({
   title,
   price,
+  priceNote,
   description,
   features,
   buttonText,
   buttonVariant,
   highlighted = false,
+  showRecommended = false,
 }: PricingCardProps) {
   return (
     <motion.div
       className={`bg-gray-900 border ${
         highlighted ? "border-blue-500" : "border-gray-800"
-      } rounded-xl p-8 ${highlighted ? "shadow-lg shadow-blue-500/20 relative" : ""} h-full`}
+      } rounded-xl p-8 relative`}
       whileHover={{
         y: -10,
         boxShadow: highlighted
@@ -120,7 +116,7 @@ function PricingCard({
       }}
       transition={{ duration: 0.3 }}
     >
-      {highlighted && (
+      {showRecommended && (
         <motion.div
           className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full"
           initial={{ scale: 1 }}
@@ -131,74 +127,30 @@ function PricingCard({
         </motion.div>
       )}
       <div className="text-center mb-6">
-        <motion.h3
-          className="text-xl font-bold mb-2"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          {title}
-        </motion.h3>
-        <motion.div
-          className="text-3xl font-bold mb-2"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
-          viewport={{ once: true }}
-        >
-          {price}
-          <span className="text-sm text-gray-400 font-normal">/mes</span>
-        </motion.div>
-        <motion.p
-          className="text-gray-400 text-sm"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          viewport={{ once: true }}
-        >
-          {description}
-        </motion.p>
+        <h3 className="text-xl font-bold mb-2">{title}</h3>
+        <div className="text-3xl font-bold mb-2">
+          {price} <span className="text-sm text-gray-400 font-normal">{priceNote}</span>
+        </div>
+        <p className="text-gray-400 text-sm">{description}</p>
       </div>
-
-      <motion.ul
-        className="space-y-3 mb-8"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        viewport={{ once: true }}
-      >
+      <ul className="space-y-3 mb-8">
         {features.map((feature, index) => (
-          <motion.li
-            key={index}
-            className="flex items-start gap-3"
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 + index * 0.1, duration: 0.3 }}
-            viewport={{ once: true }}
-          >
+          <li key={index} className="flex items-start gap-3">
             <div className="flex-shrink-0 mt-1">
-              <motion.div
-                className={`${highlighted ? "bg-blue-500/20" : "bg-gray-800"} p-1 rounded-full`}
-                whileHover={{ scale: 1.2 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              >
+              <div className={`${highlighted ? "bg-blue-500/20" : "bg-gray-800"} p-1 rounded-full`}>
                 <Check className={`h-3 w-3 ${highlighted ? "text-blue-500" : "text-gray-400"}`} />
-              </motion.div>
+              </div>
             </div>
             <span className="text-sm text-gray-300">{feature}</span>
-          </motion.li>
+          </li>
         ))}
-      </motion.ul>
-
-      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.2 }}>
-        <Button
-          variant={buttonVariant}
-          className={`w-full ${highlighted && buttonVariant === "default" ? "bg-blue-600 hover:bg-blue-700" : ""}`}
-        >
-          {buttonText}
-        </Button>
-      </motion.div>
+      </ul>
+      <Button
+        variant={buttonVariant}
+        className={`w-full ${highlighted && buttonVariant === "default" ? "bg-blue-600 hover:bg-blue-700" : ""}`}
+      >
+        {buttonText}
+      </Button>
     </motion.div>
   )
 }
