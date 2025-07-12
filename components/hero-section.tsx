@@ -12,20 +12,6 @@ export function HeroSection() {
   const { t } = useI18n()
   const [titleComplete, setTitleComplete] = useState(false)
 
-  // const scrollToContact = () => {
-  //   const contactElement = document.querySelector("#contacto")
-  //   if (contactElement) {
-  //     const headerOffset = 80
-  //     const elementPosition = contactElement.getBoundingClientRect().top
-  //     const offsetPosition = elementPosition + window.pageYOffset - headerOffset
-
-  //     window.scrollTo({
-  //       top: offsetPosition,
-  //       behavior: "smooth",
-  //     })
-  //   }
-  // }
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
       {/* Animated background elements */}
@@ -136,7 +122,7 @@ export function HeroSection() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent"
                 >
-                  <TypewriterText text="AI Agents" speed={80} delay={500} onComplete={() => setTitleComplete(true)} />
+                  <TypewriterText className="text-white" text="AI Agents" speed={80} delay={500} onComplete={() => setTitleComplete(true)} />
                 </motion.div>
                 {titleComplete && (
                   <motion.div
