@@ -4,7 +4,7 @@ import React from "react"
 
 import { AnimatedText } from "@/components/ui/animated-text"
 import { motion } from "framer-motion"
-import { ScrollReveal } from "@/components/ui/scroll-reveal"
+// import { ScrollReveal } from "@/components/ui/scroll-reveal"
 import { ThumbsUp, BarChart2, MessageSquare, Truck } from "lucide-react"
 
 export function CapabilitiesSection() {
@@ -40,7 +40,7 @@ export function CapabilitiesSection() {
       />
 
       <div className="container relative z-20 overflow-hidden">
-        <ScrollReveal>
+        {/* <ScrollReveal> */}
           <div className="text-center mb-16">
             <AnimatedText text="Capacidades" className="text-3xl md:text-5xl font-bold mb-4" as="h2" />
             <motion.p
@@ -53,7 +53,7 @@ export function CapabilitiesSection() {
               Descubra todo lo que nuestros agentes AI pueden hacer por su tienda online
             </motion.p>
           </div>
-        </ScrollReveal>
+        {/* </ScrollReveal> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 overflow-visible">
           {[
@@ -86,14 +86,14 @@ export function CapabilitiesSection() {
               delay: 0.4,
             },
           ].map((capability, index) => (
-            <ScrollReveal key={index} delay={capability.delay}>
+            // <ScrollReveal key={index} delay={capability.delay}>
               <CapabilityCard
                 title={capability.title}
                 description={capability.description}
                 icon={<capability.icon />}
                 colorClass={capability.color}
               />
-            </ScrollReveal>
+            // </ScrollReveal>
           ))}
         </div>
 

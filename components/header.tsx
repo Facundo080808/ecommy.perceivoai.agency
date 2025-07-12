@@ -13,19 +13,19 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 10
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled)
-      }
-    }
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const isScrolled = window.scrollY > 10
+  //     if (isScrolled !== scrolled) {
+  //       setScrolled(isScrolled)
+  //     }
+  //   }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [scrolled])
+  //   window.addEventListener("scroll", handleScroll)
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll)
+  //   }
+  // }, [scrolled])
 
   return (
     <motion.header
@@ -75,10 +75,10 @@ export function Header() {
                     const elementPosition = targetElement.getBoundingClientRect().top
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 
-                    window.scrollTo({
-                      top: offsetPosition,
-                      behavior: "smooth",
-                    })
+                    // window.scrollTo({
+                    //   top: offsetPosition,
+                    //   behavior: "smooth",
+                    // })
                   }
                 }}
               >

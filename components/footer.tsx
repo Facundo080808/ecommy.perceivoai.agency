@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { MessageSquare, Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
 import { motion } from "framer-motion"
-import { ScrollReveal } from "@/components/ui/scroll-reveal"
+// import { ScrollReveal } from "@/components/ui/scroll-reveal"
 import { useI18n } from "@/lib/i18n/context"
 
 export function Footer() {
@@ -14,7 +14,7 @@ export function Footer() {
     <footer className="bg-gray-950 border-t border-gray-800 py-12 relative overflow-hidden">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <ScrollReveal delay={0.1}>
+          {/* <ScrollReveal delay={0.1}> */}
             <div className="flex flex-col gap-4">
               <motion.div
                 className="flex items-center gap-2"
@@ -55,9 +55,9 @@ export function Footer() {
                 ))}
               </motion.div>
             </div>
-          </ScrollReveal>
+          {/* </ScrollReveal> */}
 
-          <ScrollReveal delay={0.2}>
+          {/* <ScrollReveal delay={0.2}> */}
             <FooterColumn
               title={t("footer.product.title")}
               links={
@@ -66,9 +66,9 @@ export function Footer() {
                   : Object.values(t("footer.product.links") as Record<string, string>)
               }
             />
-          </ScrollReveal>
+          {/* </ScrollReveal> */}
 
-          <ScrollReveal delay={0.3}>
+          {/* <ScrollReveal delay={0.3}> */}
             <FooterColumn
               title={t("footer.resources.title")}
               links={
@@ -77,9 +77,9 @@ export function Footer() {
                   : Object.values(t("footer.resources.links") as Record<string, string>)
               }
             />
-          </ScrollReveal>
+          {/* </ScrollReveal> */}
 
-          <ScrollReveal delay={0.4}>
+          {/* <ScrollReveal delay={0.4}> */}
             <FooterColumn
               title={t("footer.company.title")}
               links={
@@ -88,7 +88,7 @@ export function Footer() {
                   : Object.values(t("footer.company.links") as Record<string, string>)
               }
             />
-          </ScrollReveal>
+          {/* </ScrollReveal> */}
         </div>
 
         <motion.div

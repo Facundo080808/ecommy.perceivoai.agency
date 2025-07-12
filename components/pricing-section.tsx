@@ -5,14 +5,14 @@ import { Check } from "lucide-react"
 import { AnimatedText } from "@/components/ui/animated-text"
 import { AnimatedCard } from "@/components/ui/animated-card"
 import { motion } from "framer-motion"
-import { ScrollReveal } from "@/components/ui/scroll-reveal"
+// import { ScrollReveal } from "@/components/ui/scroll-reveal"
 
 export function PricingSection() {
   return (
     <section id="precios" className="py-20 bg-gray-950 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black to-transparent z-10"></div>
       <div className="container relative z-20">
-        <ScrollReveal>
+        {/* <ScrollReveal> */}
           <div className="text-center mb-16">
             <AnimatedText text="Planes y Precios" className="text-3xl md:text-4xl font-bold mb-4" as="h2" />
             <motion.p
@@ -20,12 +20,12 @@ export function PricingSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
             >
               Soluciones flexibles que se adaptan a las necesidades de su negocio
             </motion.p>
           </div>
-        </ScrollReveal>
+        {/* </ScrollReveal> */}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <AnimatedCard delay={0.1}>

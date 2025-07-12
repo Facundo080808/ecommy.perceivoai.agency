@@ -59,9 +59,9 @@ export function ChatInterface({
     showMessages()
   }, [messages, productRecommendations])
 
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  }, [visibleMessages, showRecommendations])
+  // useEffect(() => {
+  //   messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  // }, [visibleMessages, showRecommendations])
 
   return (
     <div className="flex h-[600px] w-full bg-gray-900 rounded-lg overflow-hidden">

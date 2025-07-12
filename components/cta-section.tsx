@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { AnimatedText } from "@/components/ui/animated-text"
 import { motion } from "framer-motion"
-import { ScrollReveal } from "@/components/ui/scroll-reveal"
+// import { ScrollReveal } from "@/components/ui/scroll-reveal"
 import { MessageSquare, Smartphone, Laptop, ShoppingBag, ArrowRight } from "lucide-react"
 import { useI18n } from "@/lib/i18n/context"
 import React from "react"
@@ -15,7 +15,7 @@ export function CTASection() {
     <section className="py-20 bg-black relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-950 to-transparent z-10"></div>
       <div className="container relative z-20">
-        <ScrollReveal>
+        {/* <ScrollReveal> */}
           <motion.div
             className="max-w-5xl mx-auto bg-gradient-to-r from-blue-950 to-gray-900 rounded-2xl p-12 relative overflow-hidden"
             whileHover={{ boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.25)" }}
@@ -198,7 +198,7 @@ export function CTASection() {
               </motion.div>
             </div>
           </motion.div>
-        </ScrollReveal>
+        {/* </ScrollReveal> */}
       </div>
     </section>
   )

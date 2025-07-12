@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 export function WhatsAppWidget() {
   const [isOpen, setIsOpen] = useState(false)
-  const WHATSAPP_NUMBER = "34123456789" // Cambiar por el número real
+  const WHATSAPP_NUMBER = "56930835236" // Cambiar por el número real
 
   const openWhatsApp = (message?: string) => {
     const defaultMessage =
@@ -22,7 +22,7 @@ export function WhatsAppWidget() {
     <>
       {/* Widget flotante */}
       <motion.div
-        className="fixed bottom-6 right-6 z-50"
+        className="fixed bottom-6 right-6 z-50 cursor-pointer"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 2, type: "spring", stiffness: 260, damping: 20 }}

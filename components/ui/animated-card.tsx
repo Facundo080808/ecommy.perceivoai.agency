@@ -25,18 +25,18 @@ export function AnimatedCard({
   return (
     <motion.div
       className={cn("relative", className)}
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration, delay, type: "spring", stiffness: 100 }}
       viewport={{ once }}
-      whileHover={
-        hover
-          ? {
-              y: -5,
-              transition: { duration: 0.2 },
-            }
-          : undefined
-      }
+      // whileHover={
+      //   hover
+      //     ? {
+      //         y: -5,
+      //         transition: { duration: 0.2 },
+      //       }
+      //     : undefined
+      // }
     >
       {children}
     </motion.div>

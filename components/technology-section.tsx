@@ -2,80 +2,80 @@
 
 import type React from "react"
 import { Brain, Search, Sparkles, Filter, Truck } from "lucide-react"
-import { AnimatedText } from "@/components/ui/animated-text"
+// import { AnimatedText } from "@/components/ui/animated-text"
 import { motion } from "framer-motion"
-import { ScrollReveal, Parallax } from "@/components/ui/scroll-reveal"
+// import { ScrollReveal, Parallax } from "@/components/ui/scroll-reveal"
 
 export function TechnologySection() {
   return (
     <section id="tecnologia" className="py-20 bg-gray-950 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black to-transparent z-10"></div>
       <div className="container relative z-20">
-        <ScrollReveal>
+        {/* <ScrollReveal> */}
           <div className="text-center mb-16">
-            <AnimatedText text="Tecnología Avanzada" className="text-3xl md:text-4xl font-bold mb-4" as="h2" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Tecnología Avanzada</h2>
             <motion.p
               className="text-xl text-gray-400 max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 0}}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
             >
               Potenciado por los últimos avances en inteligencia artificial y procesamiento del lenguaje natural
             </motion.p>
           </div>
-        </ScrollReveal>
+        {/* </ScrollReveal> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <Parallax speed={0.2}>
-            <ScrollReveal delay={0.1}>
+          {/* <Parallax speed={0.2}>
+            <ScrollReveal delay={0.1}> */}
               <TechCard
                 icon={<Brain className="h-10 w-10 text-blue-500" />}
                 title="Modelo de Lenguaje Contextual"
                 description="Comprende el contexto y la intención detrás de las consultas de los usuarios para ofrecer respuestas precisas."
               />
-            </ScrollReveal>
-          </Parallax>
+            {/* </ScrollReveal>
+          </Parallax> */}
 
-          <Parallax speed={0.3}>
-            <ScrollReveal delay={0.2}>
+          {/* <Parallax speed={0.3}>
+            <ScrollReveal delay={0.2}> */}
               <TechCard
                 icon={<Search className="h-10 w-10 text-blue-500" />}
                 title="Motor de Búsqueda Semántica"
                 description="Va más allá de las palabras clave para entender el significado y la intención de las búsquedas."
               />
-            </ScrollReveal>
-          </Parallax>
+            {/* </ScrollReveal>
+          </Parallax> */}
 
-          <Parallax speed={0.2}>
-            <ScrollReveal delay={0.3}>
+          {/* <Parallax speed={0.2}>
+            <ScrollReveal delay={0.3}> */}
               <TechCard
                 icon={<Sparkles className="h-10 w-10 text-blue-500" />}
                 title="Sistema de Recomendación Híbrido"
                 description="Combina análisis de comportamiento y preferencias para ofrecer recomendaciones personalizadas."
               />
-            </ScrollReveal>
-          </Parallax>
+            {/* </ScrollReveal>
+          </Parallax> */}
 
-          <Parallax speed={0.3}>
-            <ScrollReveal delay={0.4}>
+          {/* <Parallax speed={0.3}>
+            <ScrollReveal delay={0.4}> */}
               <TechCard
                 icon={<Filter className="h-10 w-10 text-blue-500" />}
                 title="Búsqueda Avanzada de Productos"
                 description="Filtrado inteligente que ayuda a los usuarios a encontrar exactamente lo que buscan."
               />
-            </ScrollReveal>
-          </Parallax>
+            {/* </ScrollReveal>
+          </Parallax> */}
 
-          <Parallax speed={0.2}>
-            <ScrollReveal delay={0.5}>
+          {/* <Parallax speed={0.2}>  
+            <ScrollReveal delay={0.5}> */}
               <TechCard
                 icon={<Truck className="h-10 w-10 text-blue-500" />}
                 title="Integración API de Tracking"
                 description="Conexión en tiempo real con proveedores de envío para seguimiento de pedidos actualizado."
               />
-            </ScrollReveal>
-          </Parallax>
+            {/* </ScrollReveal>
+          </Parallax> */}
         </div>
       </div>
     </section>

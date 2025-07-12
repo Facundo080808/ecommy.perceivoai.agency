@@ -4,7 +4,7 @@ import type React from "react"
 
 import { AnimatedText } from "@/components/ui/animated-text"
 import { motion } from "framer-motion"
-import { ScrollReveal } from "@/components/ui/scroll-reveal"
+// import { ScrollReveal } from "@/components/ui/scroll-reveal"
 import { ShoppingBag, Package, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -29,7 +29,7 @@ export function IntegrationSection() {
 
       <div className="container relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <ScrollReveal>
+          {/* <ScrollReveal> */}
             <div>
               <AnimatedText text="Integraciones" className="text-3xl md:text-4xl font-bold mb-4" as="h2" />
               <motion.p
@@ -72,9 +72,9 @@ export function IntegrationSection() {
                 </Button>
               </motion.div>
             </div>
-          </ScrollReveal>
+          {/* </ScrollReveal> */}
 
-          <ScrollReveal delay={0.4}>
+          {/* <ScrollReveal delay={0.4}> */}
             <motion.div
               className="relative bg-gradient-to-br from-gray-900 to-gray-800 border border-gray-800 rounded-xl p-8 overflow-hidden"
               whileHover={{ boxShadow: "0 25px 50px -12px rgba(59, 130, 246, 0.25)" }}
@@ -137,10 +137,10 @@ export function IntegrationSection() {
                 </p>
               </motion.div>
             </motion.div>
-          </ScrollReveal>
+          {/* </ScrollReveal> */}
         </div>
 
-        <ScrollReveal delay={0.6}>
+        {/* <ScrollReveal delay={0.6}> */}
           <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
             {["Shopify", "WooCommerce", "Magento", "DHL", "FedEx", "UPS"].map((name, index) => (
               <motion.div
@@ -150,14 +150,14 @@ export function IntegrationSection() {
                 transition={{ duration: 0.2 }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 * index, duration: 0.5 }}
-                viewport={{ once: true }}
+                // transition={{ delay: 0.1 * index, duration: 0.5 }}
+                // viewport={{ once: true }}
               >
                 <span className="font-medium text-gray-300">{name}</span>
               </motion.div>
             ))}
           </div>
-        </ScrollReveal>
+        {/* </ScrollReveal> */}
       </div>
     </section>
   )
