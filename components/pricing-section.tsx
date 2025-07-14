@@ -29,7 +29,7 @@ export function PricingSection() {
           <AnimatedCard delay={0.1}>
             <PricingCard
               title="Set Up o implementación personalizada"
-              price="33 UF"
+              price="$5000 USD"
               priceNote="neto"
               description="Solución completa para tu eCommerce"
               features={[
@@ -55,7 +55,7 @@ export function PricingSection() {
           <AnimatedCard delay={0.3}>
             <PricingCard
               title="Fee Mensual"
-              price="3,9 UF"
+              price="$490 USD"
               priceNote="mes neto"
               description="Costo recurrente para mantener tu solución activa"
               features={[
@@ -70,8 +70,8 @@ export function PricingSection() {
                 "RAG",
                 "tarifa por hora extra: $30 USD/Hra"
               ]}
-              buttonText="Solicitar Información"
-              buttonVariant="outline"
+              // buttonText="Solicitar Información"
+              // buttonVariant="outline"
             />
           </AnimatedCard>
         </div>
@@ -86,8 +86,8 @@ interface PricingCardProps {
   priceNote: string
   description: string
   features: string[]
-  buttonText: string
-  buttonVariant: "default" | "outline"
+  buttonText?: string
+  buttonVariant?: "default" | "outline"
   highlighted?: boolean
   showRecommended?: boolean
 }
@@ -145,12 +145,12 @@ function PricingCard({
           </li>
         ))}
       </ul>
-      <Button
+      {buttonText&&buttonVariant&&<Button
         variant={buttonVariant}
         className={`w-full ${highlighted && buttonVariant === "default" ? "bg-blue-600 hover:bg-blue-700" : ""}`}
       >
         {buttonText}
-      </Button>
+      </Button>}
     </motion.div>
   )
 }
