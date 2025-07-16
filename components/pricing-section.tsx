@@ -29,7 +29,7 @@ export function PricingSection() {
           <AnimatedCard delay={0.1}>
             <PricingCard
               title="Set Up o implementación personalizada"
-              price="$5000 USD"
+              price="$2500 USD"
               priceNote="neto"
               description="Solución completa para tu eCommerce"
               features={[
@@ -55,7 +55,53 @@ export function PricingSection() {
           <AnimatedCard delay={0.3}>
             <PricingCard
               title="Fee Mensual"
-              price="$490 USD"
+              price="$1490 USD"
+              priceNote="mes neto"
+              description="Costo recurrente para mantener tu solución activa"
+              features={[
+                "Duración: 1 mes (renovable automáticamente)",
+                "8 horas/mes de soporte incluidas",
+                "Tarifa extra por hora: 0,7 UF/hora neto",
+                "SLA de respuesta: 6 horas desde la recepción",
+                "Horario de cobertura: Lunes-Viernes, 09:00-18:00 (GMT -4)",
+                "Token LLM",
+                "base de datos",
+                "Embedding",
+                "RAG",
+                "tarifa por hora extra: $30 USD/Hra"
+              ]}
+              // buttonText="Solicitar Información"
+              // buttonVariant="outline"
+            />
+          </AnimatedCard>
+          <AnimatedCard delay={0.1}>
+            <PricingCard
+              title="Set Up o implementación personalizada"
+              price="$5000 USD"
+              priceNote="neto"
+              description="Solución completa para tu eCommerce"
+              features={[
+                "Asistente AI conversacional",
+                "Búsqueda de productos",
+                "Recomendaciones básicas",
+                "Hasta 30k interacciones/mes",
+                "Recomendaciones personalizadas",
+                "Comparación de productos",
+                "Personalización completa",
+                "Integración API completa",
+                "Historial de interacciones con el agente AI",
+                "Soporte por email",
+              ]}
+              buttonText="Solicitar Implementación"
+              buttonVariant="default"
+              highlighted
+              showRecommended
+            />
+          </AnimatedCard>
+          <AnimatedCard delay={0.3}>
+            <PricingCard
+              title="Fee Mensual"
+              price="$990 USD"
               priceNote="mes neto"
               description="Costo recurrente para mantener tu solución activa"
               features={[
